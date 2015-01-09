@@ -32,5 +32,8 @@
     "6to5": "^2.9.3",
     "espower-6to5": "^1.1.0",
     "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "power-assert": "^0.10.1"
   }
 }

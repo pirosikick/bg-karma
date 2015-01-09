@@ -4,22 +4,18 @@ var spawn = require('child_process').spawn;
 var backgroundJS = path.resolve(__dirname, '/background.js');
 
 var childs = [];
+var noop = function () {};
 
-function start (configFile, options, callback) {
+function start (options, callback) {
+  var child;
 
-  if (typeof(options) === 'function') {
-    callback = options;
-    options = {};
-  }
+  if (typeof(callback) !== 'function') callback = noop;
 
-  options = options || {};
-  options.configFile = configFile;
-
-  var data = "'" + JSON.stringify(options) + "'";
-  var child = spawn('node', [backgroundJS, data], { stdio: 'inherit' });
+  options = JSON.stringify(options || {});
+  child = spawn('node', [backgroundJS, `'${ options }'`], { stdio: 'inherit' });
 
   // exit automatically when singleRun is true
-  child.on('exit', function (code) {
+  child.on('exit', (code) => {
     _kill(child);
     callback(code);
   });
@@ -38,9 +34,10 @@ function _kill (child) {
 
   if (index !== -1) {
     child.kill();
-    childs[index] = false:
+    childs[index] = false;
   }
 }
 
 exports.start = start;
 exports.kill = kill;
+exports.__childs = childs;
