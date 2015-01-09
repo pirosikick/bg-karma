@@ -1,0 +1,28 @@
+{
+  "name": "bg-karma",
+  "version": "0.0.1",
+  "description": "Run karma in background",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pirosikick/bg-karma"
+  },
+  "author": "Hiroyuki Anai <pirosikick@gmail.com>",
+  "license": {
+    "type": "MIT",
+    "url": "http://pirosikick.mit-license.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/pirosikick/bg-karma/issues"
+  },
+  "homepage": "https://github.com/pirosikick/bg-karma",
+  "files": [
+    "README.md",
+    "index.js",
+    "lib",
+    "test"
+  ]
+}
