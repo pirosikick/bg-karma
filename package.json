@@ -4,8 +4,8 @@
   "description": "Run karma in background",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --compilers js:espower-6to5/guess test/**/*.js",
-    "test-watch": "mocha -w --compilers js:espower-6to5/guess test/**/*.js",
+    "test": "mocha --compilers js:espower-6to5/guess test/*.js",
+    "test-watch": "mocha -w --compilers js:espower-6to5/guess test/*.js",
     "build": "6to5 src --out-dir lib --source-maps-inline",
     "watch": "6to5 src --out-dir lib --watch --source-maps-inline"
   },
