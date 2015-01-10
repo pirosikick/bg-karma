@@ -1,5 +1,6 @@
 'use strict';
 
+var path = require('path');
 var spawn = require('child_process').spawn;
 var backgroundJS = path.resolve(__dirname, '/background.js');
 
@@ -12,6 +13,8 @@ function start (options, callback) {
   if (typeof(callback) !== 'function') callback = noop;
 
   options = JSON.stringify(options || {});
+
+  // node background.js '{ ... }'
   child = spawn('node', [backgroundJS, `'${ options }'`], { stdio: 'inherit' });
 
   // exit automatically when singleRun is true
