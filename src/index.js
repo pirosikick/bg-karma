@@ -1,9 +1,9 @@
 'use strict';
 
-var path = require('path');
-var spawn = require('child_process').spawn;
-var backgroundJS = path.resolve(__dirname, '/background.js');
+import path from 'path';
+import { spawn } from 'child_process';
 
+var backgroundJS = path.resolve(__dirname, '/background.js');
 var childs = [];
 var noop = function () {};
 
@@ -41,6 +41,8 @@ function _kill (child) {
   }
 }
 
-exports.start = start;
-exports.kill = kill;
-exports.__childs = childs;
+export default {
+    start: start
+  , kill: kill
+  , __childs: childs
+}
