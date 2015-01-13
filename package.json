@@ -37,7 +37,9 @@
     "sinon": "^1.12.2"
   },
   "dependencies": {
-    "karma": "^0.12.31",
     "power-assert": "^0.10.1"
+  },
+  "peerDependencied": {
+    "karma": "^0.12.31"
   }
 }
