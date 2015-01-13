@@ -2,9 +2,9 @@
 
 Run karma in background
 
-## USAGE
+## Usage
 
-For gulp task
+With gulp task:
 
 ```javascript
 var gulp = require('gulp');
