@@ -23,26 +23,6 @@ function start (options, callback) {
     callback(code);
   });
 
-  childs.push(child);
-
-  return childs.length - 1;
+  return child;
 }
-
-function kill (index) {
-  childs[index] && _kill(childs[index]);
-}
-
-function _kill (child) {
-  var index = childs.indexOf(child);
-
-  if (index !== -1) {
-    child.kill();
-    childs[index] = false;
-  }
-}
-
-export default {
-    start: start
-  , kill: kill
-  , __childs: childs
-}
+export {start};
